@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   height: 100vh;
+
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 `;
 
 export const Header = styled.header`
@@ -14,6 +17,7 @@ export const Header = styled.header`
 
   position: sticky;
   top: 0;
+  z-index: 2;
 
   > img {
     height: 30px;
@@ -42,7 +46,7 @@ export const Home = styled.section`
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    max-width: 800px;
+    max-width: 780px;
 
     color: ${({ theme }) => theme.COLOR.WHITE};
 
@@ -119,7 +123,46 @@ export const Projects = styled.section`
   background-color: ${({ theme }) => theme.COLOR.BLACK_700};
 
   display: flex;
-  align-items: start;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  
+  gap: 25px;
   padding: 25px 100px;
+
+  > h1 {
+    color: ${({ theme }) => theme.COLOR.WHITE};
+
+    font-size: 28px;
+  }
+
+  > ul {
+    list-style: none;
+
+    display: flex;
+    gap: 25px;
+
+    li {
+      button {
+        font-family: "Alumni Sans", sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+
+        color: ${({ theme }) => theme.COLOR.GRAY_200};
+
+        background-color: transparent;
+        border: 0;
+
+        transition: .5s;
+
+        &:hover {
+          color: ${({ theme }) => theme.COLOR.BLUE};
+          cursor: pointer;
+
+          transition: .4s;
+        }
+      }
+    }
+  }
+
+  height: 1000px;
 `;

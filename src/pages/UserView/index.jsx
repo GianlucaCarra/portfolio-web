@@ -2,6 +2,7 @@ import { Container, Header, Home, Card, About, Projects } from './style';
 
 import { NavItem } from "../../components/NavItem";
 import { AboutText } from "../../components/AboutText";
+import { GaleryItem } from "../../components/GaleryItem";
 
 import Logo from "../../assets/logo.svg";
 import ProfileImage from "../../assets/image-personal.png";
@@ -13,14 +14,14 @@ export function UserView() {
         <img src={Logo} alt="Logo from giancarra.com" />
 
         <nav>
-          <NavItem title="HOME" />
-          <NavItem title="ABOUT" />
-          <NavItem title="PROJECTS" />
-          <NavItem title="CONTACT" />
+          <NavItem title="home" />
+          <NavItem title="about" />
+          <NavItem title="projects" />
+          <NavItem title="contact" />
         </nav>
       </Header>
 
-      <Home>
+      <Home id='home'>
         <div className='intro'>
           <h2>Hello, welcome to my <span>portfolio</span>.</h2>
 
@@ -66,7 +67,7 @@ export function UserView() {
         <img src={ProfileImage} alt="Image of Gianluca Carra" />
       </Home>
 
-      <About>
+      <About id='about'>
         <AboutText number={"1"} title={<h2>Crafting Memorable <span>Digital Experiences</span></h2>} 
           text={<p>I'm passionate about crafting engaging 
             digital experiences that leave a lasting impact.
@@ -99,15 +100,18 @@ export function UserView() {
         />
       </About>
 
-      <Projects>
+      <Projects id='projects'>
         <h1>Projects</h1>
 
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li><button>ALL</button></li>
+          <li><button>FRONT-END</button></li>
+          <li><button>BACK-END</button></li>
         </ul>
 
+        <div className="slider">
+        </div>
+        
 
       </Projects>
     </Container>

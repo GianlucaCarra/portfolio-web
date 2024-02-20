@@ -1,8 +1,8 @@
 import { Container } from "./style";
 
-export function NavItem({title}) {
+export function NavItem({ title }) {
   return (
-    <Container>
+    <Container href={`#${title}`} >
       <span>{title}</span>
 
       <div></div>
