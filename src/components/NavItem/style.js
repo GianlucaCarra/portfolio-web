@@ -40,6 +40,10 @@ export const Container = styled.a`
     width: 100%;
   }
 
+  > .selected {
+    display: block;
+  }
+
   @keyframes slide-in {
     from {
      transform: translate(-100%);

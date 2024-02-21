@@ -1,8 +1,11 @@
-import { Container, Header, Home, Card, About, Projects } from './style';
+import { Container, Header, Home, Card, About, Projects, Contact } from './style';
 
 import { NavItem } from "../../components/NavItem";
 import { AboutText } from "../../components/AboutText";
 import { GaleryItem } from "../../components/GaleryItem";
+
+import { IoPhonePortraitOutline, IoMail } from "react-icons/io5";
+import { RiTwitterXFill, RiInstagramLine, RiGithubFill, RiLinkedinBoxFill } from "react-icons/ri";
 
 import Logo from "../../assets/logo.svg";
 import ProfileImage from "../../assets/image-personal.png";
@@ -14,7 +17,7 @@ export function UserView() {
         <img src={Logo} alt="Logo from giancarra.com" />
 
         <nav>
-          <NavItem title="home" />
+          <NavItem $is_selected title="home" />
           <NavItem title="about" />
           <NavItem title="projects" />
           <NavItem title="contact" />
@@ -111,9 +114,70 @@ export function UserView() {
 
         <div className="slider">
         </div>
-        
-
       </Projects>
+
+      <Contact id='contact'>
+        <h1>Contact</h1>
+        
+        <div className="wrapper">
+          <div className='action'>
+
+          <h2>Let's <span>Build</span> Together!</h2>
+
+          <p>
+            I'm Gianluca Carra, a seasoned freelance web 
+            developer with over three years of experience. 
+            I specialize in crafting tailored digital solutions 
+            to address your unique challenges. From website 
+            development to problem-solving, I'm dedicated 
+            to delivering the highest quality results. Join me on 
+            this journey as we transform your digital 
+            aspirations into reality!
+          </p>
+
+          <div className='contact-info'>
+            <div className="email">
+              <IoMail />
+
+              <div>
+                <span>MAIL ME</span>
+                <a href="mailto:contact@giancarra.com">contact@giancarra.com</a>
+              </div>
+            </div>
+
+            <div className="phone">
+              <IoPhonePortraitOutline />
+
+              <div>
+                <span>CALL ME (OR WHATSAPP)</span>
+                <a href="sms:+5595981083378?body=I%27m%20interested%20in%20your%service.%20Please%20contact%20me.">+55 (95) 98108-3378</a>
+              </div>
+            </div>
+          </div>
+
+          <ul>
+            <li><a href='https://linkedin.com/in/gianlucacarra' target='blank'><RiLinkedinBoxFill /></a></li>
+            <li><a href='https://github.com/gianlucacarra' target='blank'><RiGithubFill /></a></li>
+            <li><a href='https://twitter.com/giancarradev' target='blank'><RiTwitterXFill /></a></li>
+            <li><a href='https://instagram.com/giancarra_' target='blank'><RiInstagramLine /></a></li>
+          </ul>
+          </div>
+
+          <form action="">
+            <div className="input-wrapper">
+              <input type="text" />
+              <input type="text" />
+            </div>
+
+            <input type="text" />
+            <input type="text" />
+            <textarea />
+            
+            <button></button>
+          </form>
+        </div>
+        
+      </Contact>
     </Container>
   );
 }
