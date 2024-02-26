@@ -3,7 +3,7 @@ import { Container } from './style';
 export function AboutText({number, title, text}) {
   return (
     <Container>
-      <div className='number'>
+      <div className='number notSelectable'>
         <span>0{number}</span>
         
         <div className='line'></div>

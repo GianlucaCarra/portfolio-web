@@ -5,6 +5,7 @@ export const Container = styled.div`
 
   overflow-y: scroll;
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 `;
 
 export const Header = styled.header`
@@ -162,6 +163,10 @@ export const Projects = styled.section`
         }
       }
     }
+
+    button.selected {
+      color: ${({ theme }) => theme.COLOR.BLUE};
+    }
   }
 
   height: 400px;
@@ -217,6 +222,7 @@ export const Contact = styled.section`
       display: flex;
       flex-direction: column;
       gap: 25px;
+      justify-content: center;
     }
 
     .email, .phone {
@@ -296,6 +302,7 @@ export const Contact = styled.section`
     > form {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       gap: 15px;
       width: 550px;
       max-width: 550px;
@@ -314,23 +321,138 @@ export const Contact = styled.section`
         height: 45px;
         border: none;
         border-radius: 50px;
+        width: 100%;
+
+        padding: 0 20px;
+
+        font-family: "Nunito", sans-serif;
+        font-size: 16px;
+        color: ${({ theme }) => theme.COLOR.WHITE};
 
         background-color: ${({ theme }) => theme.COLOR.BLACK_700};
+      }
+
+      .textarea {
+        height: 180px;
       }
 
       textarea {
         border-radius: 25px;
 
-        height: ;
+        height: 100%;
+        padding: 12px 20px ;
+
+        resize: none;
       }
+
+      textarea:focus, input:focus, select:focus {
+        box-shadow: 0 0 0 0;
+        border: 0 none;
+        outline: 0;
+      } 
 
       button {
       height: 45px;
       border: none;
       border-radius: 50px;
+      width: calc(100% - 20%);
 
+      align-self: center;
       background-color: ${({ theme }) => theme.COLOR.BLUE};
+
+      font-family: "Nunito", sans-serif;
+      font-size: 16px;
+      color: ${({ theme }) => theme.COLOR.WHITE};
+
+      cursor: pointer;
+
+      display: grid;
+      place-items: center;
     }
+  }
+}
+`;
+
+export const Footer = styled.footer`
+  background-color: ${({ theme }) => theme.COLOR.BLACK_900};
+  
+  padding: 25px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  .help {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    color: ${({ theme }) => theme.COLOR.WHITE};
+
+    max-width: 500px;
+
+    > h1 {
+      font-size: 26px;
+
+      span {
+        color: ${({ theme }) => theme.COLOR.BLUE};
+      }
+    }
+
+    > p {
+      text-align: left;
+
+      font-size: 18px;
+
+      max-width: 600px;
+    }
+
+    a {
+      padding: 15px;
+      width: 100%;
+
+      background-color: ${({ theme }) => theme.COLOR.BLACK_700};
+
+      border-radius: 50px;
+
+      color: ${({ theme }) => theme.COLOR.WHITE};
+      text-decoration: none;
+
+      display: grid;
+      place-items: center;
+      transition: .4s;
+
+      &:hover {
+        background-color: ${({ theme }) => theme.COLOR.BLUE};
+        transition: .4s;
+
+        cursor: pointer;
+      }
+    }
+  }
+
+    .sep {
+      border: 1px solid ${({ theme }) => theme.COLOR.WHITE};
+
+      height: 200px;
+
+      position: absolute;
+      left: 50%;
+    }
+
+  .info {
+    display: grid;
+    place-items: center;
+    width: 50%;
+
+    
+  span {
+    display: grid;
+    place-items: center;
+
+    font-family: 'Roboto', sans-serif;
+    line-height: 200%;
+    color: ${({ theme }) => theme.COLOR.WHITE};
   }
 }
 `;

@@ -1,4 +1,4 @@
-import { Container, Header, Home, Card, About, Projects, Contact } from './style';
+import { Container, Header, Home, Card, About, Projects, Contact, Footer } from './style';
 
 import { NavItem } from "../../components/NavItem";
 import { AboutText } from "../../components/AboutText";
@@ -11,10 +11,33 @@ import Logo from "../../assets/logo.svg";
 import ProfileImage from "../../assets/image-personal.png";
 
 export function UserView() {
+  let filter = (event) => {
+    event.target.classList.toggle("selected");
+
+    let front = document.getElementById('front');
+    let back = document.getElementById('back');
+
+    if(front.classList.contains("selected") || back.classList.contains("selected")) {
+      document.getElementById('all').classList.remove('selected');
+    } else{
+      document.getElementById('all').classList.add('selected');
+    }
+  }
+
+  let selectAll = event => {
+    event.target.classList.add("selected");
+
+    let front = document.getElementById('front');
+    let back = document.getElementById('back');
+
+    front.classList.remove('selected');
+    back.classList.remove('selected');
+  }
+
   return (
     <Container>
       <Header>
-        <img src={Logo} alt="Logo from giancarra.com" />
+        <img className="notSelectable" src={Logo} alt="Logo from giancarra.com" />
 
         <nav>
           <NavItem $is_selected title="home" />
@@ -39,7 +62,7 @@ export function UserView() {
             aspirations into reality!
           </p>
           
-          <Card>
+          <Card className='notSelectable'>
             <span>
               <strong>
                 3+
@@ -74,7 +97,7 @@ export function UserView() {
         <AboutText number={"1"} title={<h2>Crafting Memorable <span>Digital Experiences</span></h2>} 
           text={<p>I'm passionate about crafting engaging 
             digital experiences that leave a lasting impact.
-             With over three years of experience in web development, 
+             With over three years of experience in web development,
              I specialize in creating user-friendly interfaces and 
              robust backend solutions. My goal is to go above and 
              beyond to exceed client expectations, delivering innovative 
@@ -107,12 +130,13 @@ export function UserView() {
         <h1>Projects</h1>
 
         <ul>
-          <li><button>ALL</button></li>
-          <li><button>FRONT-END</button></li>
-          <li><button>BACK-END</button></li>
+          <li><button onClick={selectAll} id='all' className='selected'>ALL</button></li>
+          <li><button onClick={filter} id='front' className=''>FRONT-END</button></li>
+          <li><button onClick={filter} id='back' className=''>BACK-END</button></li>
         </ul>
 
         <div className="slider">
+            <GaleryItem text='projeto web'/>
         </div>
       </Projects>
 
@@ -125,14 +149,12 @@ export function UserView() {
           <h2>Let's <span>Build</span> Together!</h2>
 
           <p>
-            I'm Gianluca Carra, a seasoned freelance web 
-            developer with over three years of experience. 
-            I specialize in crafting tailored digital solutions 
-            to address your unique challenges. From website 
-            development to problem-solving, I'm dedicated 
-            to delivering the highest quality results. Join me on 
-            this journey as we transform your digital 
-            aspirations into reality!
+            I'm here to help bring your ideas 
+            to life! Whether it's creating a 
+            new website, revamping your online presence, 
+            or tackling web development challenges, I'm ready 
+            to collaborate. Get in touch now and let's kickstart
+            the process of turning your visions into reality.
           </p>
 
           <div className='contact-info'>
@@ -165,19 +187,47 @@ export function UserView() {
 
           <form action="">
             <div className="input-wrapper">
-              <input type="text" />
-              <input type="text" />
+              <input type="text" placeholder='First name' />
+              <input type="text" placeholder='Second name' />
             </div>
 
-            <input type="text" />
-            <input type="text" />
-            <textarea />
+            <input type="email" placeholder='E-mail or Phone number' />
+
+            <div className='textarea'>
+              <textarea placeholder='Share your idea with me...'/>
+            </div>
             
-            <button></button>
+            <button>
+              Send message
+            </button>
           </form>
         </div>
-        
       </Contact>
+
+      <Footer>
+        <div className='help'>
+          <h1> Need <span>Assistance?</span></h1>
+
+          <p>
+            Reached the bottom of the page and still have questions
+            or need assistance? We're here to help! Feel free to 
+            contact us if you have any inquiries or need further 
+            information. We're ready to assist you in achieving your goals.
+          </p>
+          
+          <a href='mailto:help@giancarra.com'>Get Help</a>
+        </div>
+
+        <div className="sep"></div>
+
+        <div className='info'>
+            <span>
+            Designed and made 
+              by<br/>
+              <strong>Gianluca Carra</strong>
+            </span>
+        </div>
+      </Footer>
     </Container>
   );
 }

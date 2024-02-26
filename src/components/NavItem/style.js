@@ -26,6 +26,10 @@ export const Container = styled.a`
     color: ${({ theme }) => theme.COLOR.WHITE};
 
     margin-bottom: 4px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   > div {
@@ -40,7 +44,7 @@ export const Container = styled.a`
     width: 100%;
   }
 
-  > .selected {
+  .active {
     display: block;
   }
 

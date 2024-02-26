@@ -7,7 +7,7 @@ export function GaleryItem({ image, text }) {
     <Container>
       <img src={foto} alt={text} />
 
-      <span>Projetonncncncnnc</span>
+      <span>{text}</span>
     </Container>
   );
 }
