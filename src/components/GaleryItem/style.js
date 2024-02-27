@@ -1,51 +1,48 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-  display: grid;
-  place-items: center;
+  height: 200px;
+  width: 350px;
+  overflow: hidden;
+
+  position: relative;
 
   border: none;
 
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+
   &:hover {
-    > span {
-      z-index: 0;
-      transition: .4s;
+    cursor: pointer;
+
+    span {
+      display: grid;
     }
   }
 
-  > img {
-    height: 150px;
-    width: 300px;
+  img {
+    height: 100%;
+    width: 100%;
 
-    position: relative;
-    
-    transition: .4s;
-
-    &:hover {
-      cursor: pointer;
-
-      filter: brightness(.6);
-      transition: .4s;
-    }
+    object-fit: cover;
+    object-position: top;
   }
 
   span {
-    font-family: "Nunito", sans-serif;
-    font-size: 26px;
-    font-weight: 700;
+    width: 100%;
+    height: 100%;
 
-    width: 250px;
-    text-overflow: wrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    place-items: center;
 
     color: ${({ theme }) => theme.COLOR.WHITE};
 
-    position: absolute;
-    z-index: -1;
-    transition: .4s;
+    background-color: #00000060;
 
-    &:hover {
-      cursor: pointer;
-      transition: .4s;
-    }
+    display: none;
   }
 `;

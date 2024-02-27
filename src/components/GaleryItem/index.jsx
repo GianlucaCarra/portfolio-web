@@ -1,13 +1,11 @@
 import { Container } from "./style";
 
-import foto from "../../assets/image-personal.png"
-
-export function GaleryItem({ image, text }) {
+export function GaleryItem({ img, title, className }) {
   return (
-    <Container>
-      <img src={foto} alt={text} />
+    <Container className={className} >
+      <img src={img} alt={title} />
 
-      <span>{text}</span>
+      <span>{title}</span>
     </Container>
   );
 }

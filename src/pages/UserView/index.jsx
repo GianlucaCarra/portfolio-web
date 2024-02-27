@@ -11,27 +11,33 @@ import Logo from "../../assets/logo.svg";
 import ProfileImage from "../../assets/image-personal.png";
 
 export function UserView() {
-  let filter = (event) => {
+
+  const filter = (event) => {
     event.target.classList.toggle("selected");
 
-    let front = document.getElementById('front');
-    let back = document.getElementById('back');
+    const front = document.getElementById('front');
+    const back = document.getElementById('back');
+    const all = document.getElementById('all');
 
     if(front.classList.contains("selected") || back.classList.contains("selected")) {
-      document.getElementById('all').classList.remove('selected');
-    } else{
-      document.getElementById('all').classList.add('selected');
+      all.classList.remove('selected');
+    } else {
+      all.classList.add('selected');
     }
   }
 
-  let selectAll = event => {
+  const selectAll = event => {
     event.target.classList.add("selected");
 
-    let front = document.getElementById('front');
-    let back = document.getElementById('back');
+    const front = document.getElementById('front');
+    const back = document.getElementById('back');
+
+    const showAll = document.getElementsByClassName("front back");
 
     front.classList.remove('selected');
     back.classList.remove('selected');
+
+    showAll.classList.remove('hide');
   }
 
   return (
@@ -136,7 +142,10 @@ export function UserView() {
         </ul>
 
         <div className="slider">
-            <GaleryItem text='projeto web'/>
+          <GaleryItem img={ProfileImage} className="back" title="Projeto api" />
+          <GaleryItem img={ProfileImage} className="back" title="Projeto api 2" />
+          <GaleryItem img={ProfileImage} className="front" title="Projeto web" />
+          <GaleryItem img={ProfileImage} className="front" title="Projeto web 2" />
         </div>
       </Projects>
 

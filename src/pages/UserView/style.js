@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import img from "../../assets/image-personal.png";
+
 export const Container = styled.div`
   height: 100vh;
 
@@ -170,6 +172,10 @@ export const Projects = styled.section`
   }
 
   height: 400px;
+
+  .hide {
+    display: none;
+  }
 `;
 
 export const Contact = styled.section`
