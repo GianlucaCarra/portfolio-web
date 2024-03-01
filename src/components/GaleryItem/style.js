@@ -1,48 +1,64 @@
 import styled from "styled-components";
 
-export const Container = styled.button`
+export const Container = styled.div`
   height: 200px;
   width: 350px;
-  overflow: hidden;
 
   position: relative;
 
   border: none;
-
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  font-size: 24px;
+  transition: 0.5s;
 
   &:hover {
-    cursor: pointer;
+    transform: scale(1.3);
+    transition: 0.5s;
+    
+    .info {
+      display: flex;
 
-    span {
-      display: grid;
+      animation: .5s slide-bottom;
+      position: absolute;
+      bottom: -95%;
+      z-index: -1;
+
+      border: 1px solid ${({ theme }) =>  theme.COLOR.WHITE};
     }
   }
 
-  img {
+  > img {
     height: 100%;
     width: 100%;
-
-    object-fit: cover;
+    
     object-position: top;
+    object-fit: cover;
+
+    transition: 0.5s;
   }
 
-  span {
-    width: 100%;
-    height: 100%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    place-items: center;
-
-    color: ${({ theme }) => theme.COLOR.WHITE};
-
-    background-color: #00000060;
-
+  .info {
+    backdrop-filter: blur(10px);
+    padding: 20px;
     display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 10px;
+
+    transition: .4s;
+
+    color: ${({ theme }) =>  theme.COLOR.WHITE};
+
+    > p {
+      font-size: 14px
+    }
+  }
+
+  @keyframes slide-bottom {
+    from {
+      transform: translateY(-100%);
+    } to {
+      transform: translateY(0);
+    }
   }
 `;

@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import img from "../../assets/image-personal.png";
-
 export const Container = styled.div`
   height: 100vh;
 
@@ -155,13 +153,13 @@ export const Projects = styled.section`
         background-color: transparent;
         border: 0;
 
-        transition: .5s;
+        transition: .2s;
 
         &:hover {
           color: ${({ theme }) => theme.COLOR.BLUE};
           cursor: pointer;
 
-          transition: .4s;
+          transition: .2s;
         }
       }
     }
@@ -169,12 +167,6 @@ export const Projects = styled.section`
     button.selected {
       color: ${({ theme }) => theme.COLOR.BLUE};
     }
-  }
-
-  height: 400px;
-
-  .hide {
-    display: none;
   }
 `;
 

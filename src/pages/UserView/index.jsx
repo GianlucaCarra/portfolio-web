@@ -5,7 +5,7 @@ import { AboutText } from "../../components/AboutText";
 import { GaleryItem } from "../../components/GaleryItem";
 
 import { IoPhonePortraitOutline, IoMail } from "react-icons/io5";
-import { RiTwitterXFill, RiInstagramLine, RiGithubFill, RiLinkedinBoxFill } from "react-icons/ri";
+import { RiTwitterXFill, RiInstagramLine, RiGithubFill, RiLinkedinBoxFill, RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 
 import Logo from "../../assets/logo.svg";
 import ProfileImage from "../../assets/image-personal.png";
@@ -40,6 +40,33 @@ export function UserView() {
     showAll.classList.remove('hide');
   }
 
+  let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+}
+
   return (
     <Container>
       <Header>
@@ -71,7 +98,7 @@ export function UserView() {
           <Card className='notSelectable'>
             <span>
               <strong>
-                3+
+                4+
               </strong>
               experience
             </span>
@@ -141,12 +168,7 @@ export function UserView() {
           <li><button onClick={filter} id='back' className=''>BACK-END</button></li>
         </ul>
 
-        <div className="slider">
-          <GaleryItem img={ProfileImage} className="back" title="Projeto api" />
-          <GaleryItem img={ProfileImage} className="back" title="Projeto api 2" />
-          <GaleryItem img={ProfileImage} className="front" title="Projeto web" />
-          <GaleryItem img={ProfileImage} className="front" title="Projeto web 2" />
-        </div>
+        <GaleryItem img={ProfileImage} title="one" />
       </Projects>
 
       <Contact id='contact'>
