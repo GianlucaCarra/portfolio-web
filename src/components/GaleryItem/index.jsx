@@ -1,20 +1,14 @@
 import { Container } from "./style";
 
-export function GaleryItem({ img, title, className, desc }) {
+export function GaleryItem({ img, title, className, desc, href}) {
   return (
-    <Container className={className} >
+    <Container className={className} href={href}>
       <img src={img} alt={title} />
 
       <div className="info">
-        <h3>title</h3>
+        <h3>{title}</h3>
 
-        <p>Lorem ipsum dolor sit amet
-           consectetur adipisicing elit. 
-           At laborum laudantium soluta. 
-           Consequuntur, sunt esse recusandae 
-           autem nam quisquam magni et nemo 
-           pariatur officia repellat obcaecati 
-           soluta ipsa eos alias?</p>
+        <p>{desc}</p>
       </div>
     </Container>
   );

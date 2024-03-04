@@ -1,24 +1,33 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.a`
   height: 200px;
   width: 350px;
+
+  display: block;
 
   position: relative;
 
   border: none;
+
   transition: 0.5s;
 
   &:hover {
-    transform: scale(1.3);
+    transform: scale(1.4);
     transition: 0.5s;
     
+    z-index: 1;
+
+    cursor: pointer;
+
     .info {
       display: flex;
 
+      margin-top: 15px;
+      min-width: 100%;
+
       animation: .5s slide-bottom;
       position: absolute;
-      bottom: -95%;
       z-index: -1;
 
       border: 1px solid ${({ theme }) =>  theme.COLOR.WHITE};
@@ -56,7 +65,7 @@ export const Container = styled.div`
 
   @keyframes slide-bottom {
     from {
-      transform: translateY(-100%);
+      transform: translateY(-50%);
     } to {
       transform: translateY(0);
     }

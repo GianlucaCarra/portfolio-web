@@ -168,6 +168,21 @@ export const Projects = styled.section`
       color: ${({ theme }) => theme.COLOR.BLUE};
     }
   }
+  
+  .slider {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    gap: 20px;
+  }
+
+  .hide {
+    position: relative;
+    top: 0;
+
+    height: 0px;
+  }
 `;
 
 export const Contact = styled.section`
