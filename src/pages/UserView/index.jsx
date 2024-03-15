@@ -2,69 +2,88 @@ import { Container, Header, Home, Card, About, Projects, Contact, Footer } from 
 
 import { NavItem } from "../../components/NavItem";
 import { AboutText } from "../../components/AboutText";
-import { GaleryItem } from "../../components/GaleryItem";
+import { Carousel } from "../../components/Carousel";
 
 import { IoPhonePortraitOutline, IoMail } from "react-icons/io5";
-import { RiTwitterXFill, RiInstagramLine, RiGithubFill, RiLinkedinBoxFill, RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
+import { RiTwitterXFill, RiInstagramLine, RiGithubFill, RiLinkedinBoxFill } from "react-icons/ri";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
+import { slides } from "../../data/projectsData";
 
 import Logo from "../../assets/logo.svg";
 import ProfileImage from "../../assets/image-personal.png";
 
 export function UserView() {
+  const selectAll = event => {
+    event.target.classList.add("selected");
 
-  const filterBack = (event) => {
-    event.target.classList.toggle("selected");
-
-    const front = document.getElementById('front');
-    const back = document.getElementById('back');
-    const all = document.getElementById('all');
+    const frontSelect = document.getElementById('front');
+    const backSelect = document.getElementById('back');
+    const allSelect = document.getElementById('all');
 
     const backend = document.querySelectorAll(".backend");
     const frontend = document.querySelectorAll(".frontend");
 
-    if(front.classList.contains("selected") || back.classList.contains("selected")) {
-      all.classList.remove('selected');
+    frontSelect.classList.remove('selected');
+    backSelect.classList.remove('selected');
 
-      if(back.classList.contains("selected")) {
-        frontend.forEach(element => {
-          element.classList.add('hide');
-        });
-      }
-    } else {
-      all.classList.add('selected');
+    const selec = "selected"
+
+    backend.forEach(element => {
+      element.classList.remove("hide")
+    });
+
+    frontend.forEach(element => {
+      element.classList.remove("hide")
+    });
+  }
+
+  const filterBack = (event) => {
+    event.target.classList.add("selected");
+
+    const frontSelect = document.getElementById('front');
+    const backSelect = document.getElementById('back');
+    const allSelect = document.getElementById('all');
+
+    const backend = document.querySelectorAll(".backend");
+    const frontend = document.querySelectorAll(".frontend");
+
+    if(backSelect.classList.contains("selected")) {
+      allSelect.classList.remove("selected");
+      frontSelect.classList.remove("selected");
+
+      frontend.forEach(element => {
+        element.classList.add("hide");
+      });
+
+      backend.forEach(element => {
+        element.classList.remove("hide");
+      });
     }
   }
 
   const filterFront = (event) => {
-    event.target.classList.toggle("selected");
-
-    const front = document.getElementById('front');
-    const back = document.getElementById('back');
-    const all = document.getElementById('all');
-
-    const backend = document.querySelectorAll(".backend");
-    const frontend = document.querySelectorAll(".frontend");
-
-    if(front.classList.contains("selected") || back.classList.contains("selected")) {
-      all.classList.remove('selected');
-
-    } else {
-      all.classList.add('selected');
-    }
-  }
-
-  const selectAll = event => {
     event.target.classList.add("selected");
 
-    const front = document.getElementById('front');
-    const back = document.getElementById('back');
+    const frontSelect = document.getElementById('front');
+    const backSelect = document.getElementById('back');
+    const allSelect = document.getElementById('all');
+
     const backend = document.querySelectorAll(".backend");
     const frontend = document.querySelectorAll(".frontend");
 
-    front.classList.remove('selected');
-    back.classList.remove('selected');
+    if(frontSelect.classList.contains("selected")) {
+      allSelect.classList.remove("selected");
+      backSelect.classList.remove("selected");
 
-    backend.classList.remove('hide') && frontend.classList.remove('hide');
+      backend.forEach(element => {
+        element.classList.add("hide");
+      });
+
+      frontend.forEach(element => {
+        element.classList.remove("hide");
+      });
+    }
   }
 
   return (
@@ -168,26 +187,7 @@ export function UserView() {
           <li><button onClick={filterBack} id='back' className=''>BACK-END</button></li>
         </ul>
 
-        <div className="slider">
-          <GaleryItem img={ProfileImage} className="backend" title="one" desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-          " href="about:blank"/>
-          <GaleryItem img={ProfileImage} className="backend" title="one" desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-          " href="about:blank"/>
-          <GaleryItem img={ProfileImage} className="backend" title="one" desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-          " href="about:blank"/>
-          <GaleryItem img={ProfileImage} className="frontend" title="one" desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-          " href="about:blank"/>
-          <GaleryItem img={ProfileImage} className="frontend" title="one" desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-          " href="about:blank"/>
-          <GaleryItem img={ProfileImage} className="frontend" title="one" desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-          " href="about:blank"/>
-        </div>
+        <Carousel data={slides} />
       </Projects>
 
       <Contact id='contact'>

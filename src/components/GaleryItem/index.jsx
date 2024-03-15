@@ -1,6 +1,6 @@
 import { Container } from "./style";
 
-export function GaleryItem({ img, title, className, desc, href}) {
+export function GaleryItem({ img, title, className, desc, href }) {
   return (
     <Container className={className} href={href}>
       <img src={img} alt={title} />

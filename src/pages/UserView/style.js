@@ -127,6 +127,8 @@ export const Projects = styled.section`
   flex-direction: column;
   align-items: center;
   
+  height: fit-content;
+
   gap: 25px;
   padding: 25px 100px;
 
@@ -170,18 +172,13 @@ export const Projects = styled.section`
   }
   
   .slider {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-
+    display: flex;
+    align-items: center;
     gap: 20px;
   }
 
   .hide {
-    position: relative;
-    top: 0;
-
-    height: 0px;
+    display: none;
   }
 `;
 
