@@ -137,49 +137,6 @@ export const Projects = styled.section`
 
     font-size: 28px;
   }
-
-  > ul {
-    list-style: none;
-
-    display: flex;
-    gap: 25px;
-
-    li {
-      button {
-        font-family: "Alumni Sans", sans-serif;
-        font-size: 26px;
-        font-weight: 700;
-
-        color: ${({ theme }) => theme.COLOR.GRAY_200};
-
-        background-color: transparent;
-        border: 0;
-
-        transition: .2s;
-
-        &:hover {
-          color: ${({ theme }) => theme.COLOR.BLUE};
-          cursor: pointer;
-
-          transition: .2s;
-        }
-      }
-    }
-
-    button.selected {
-      color: ${({ theme }) => theme.COLOR.BLUE};
-    }
-  }
-  
-  .slider {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .hide {
-    display: none;
-  }
 `;
 
 export const Contact = styled.section`

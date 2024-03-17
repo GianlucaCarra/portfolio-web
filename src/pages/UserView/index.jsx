@@ -6,7 +6,6 @@ import { Carousel } from "../../components/Carousel";
 
 import { IoPhonePortraitOutline, IoMail } from "react-icons/io5";
 import { RiTwitterXFill, RiInstagramLine, RiGithubFill, RiLinkedinBoxFill } from "react-icons/ri";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 import { slides } from "../../data/projectsData";
 
@@ -14,78 +13,6 @@ import Logo from "../../assets/logo.svg";
 import ProfileImage from "../../assets/image-personal.png";
 
 export function UserView() {
-  const selectAll = event => {
-    event.target.classList.add("selected");
-
-    const frontSelect = document.getElementById('front');
-    const backSelect = document.getElementById('back');
-    const allSelect = document.getElementById('all');
-
-    const backend = document.querySelectorAll(".backend");
-    const frontend = document.querySelectorAll(".frontend");
-
-    frontSelect.classList.remove('selected');
-    backSelect.classList.remove('selected');
-
-    const selec = "selected"
-
-    backend.forEach(element => {
-      element.classList.remove("hide")
-    });
-
-    frontend.forEach(element => {
-      element.classList.remove("hide")
-    });
-  }
-
-  const filterBack = (event) => {
-    event.target.classList.add("selected");
-
-    const frontSelect = document.getElementById('front');
-    const backSelect = document.getElementById('back');
-    const allSelect = document.getElementById('all');
-
-    const backend = document.querySelectorAll(".backend");
-    const frontend = document.querySelectorAll(".frontend");
-
-    if(backSelect.classList.contains("selected")) {
-      allSelect.classList.remove("selected");
-      frontSelect.classList.remove("selected");
-
-      frontend.forEach(element => {
-        element.classList.add("hide");
-      });
-
-      backend.forEach(element => {
-        element.classList.remove("hide");
-      });
-    }
-  }
-
-  const filterFront = (event) => {
-    event.target.classList.add("selected");
-
-    const frontSelect = document.getElementById('front');
-    const backSelect = document.getElementById('back');
-    const allSelect = document.getElementById('all');
-
-    const backend = document.querySelectorAll(".backend");
-    const frontend = document.querySelectorAll(".frontend");
-
-    if(frontSelect.classList.contains("selected")) {
-      allSelect.classList.remove("selected");
-      backSelect.classList.remove("selected");
-
-      backend.forEach(element => {
-        element.classList.add("hide");
-      });
-
-      frontend.forEach(element => {
-        element.classList.remove("hide");
-      });
-    }
-  }
-
   return (
     <Container>
       <Header>
@@ -180,12 +107,6 @@ export function UserView() {
 
       <Projects id='projects'>
         <h1>Projects</h1>
-
-        <ul>
-          <li><button onClick={selectAll} id='all' className='selected'>ALL</button></li>
-          <li><button onClick={filterFront} id='front' className=''>FRONT-END</button></li>
-          <li><button onClick={filterBack} id='back' className=''>BACK-END</button></li>
-        </ul>
 
         <Carousel data={slides} />
       </Projects>

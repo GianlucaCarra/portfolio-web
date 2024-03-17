@@ -1,45 +1,118 @@
 {
   "slides": [
     {
-      "id": 0,
       "projects": [
         {
-          "key": 0,
           "img": "src/assets/image-personal.png",
           "title": "backend", 
           "className": "backend", 
           "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
         },
         {
-          "key": 1,
           "img": "src/assets/image-personal.png", 
           "title": "backend", 
           "className": "backend", 
           "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
         },
         {
-          "key": 2,
           "img": "src/assets/image-personal.png", 
           "title": "backend", 
           "className": "backend", 
           "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
         },
         {
-          "key": 3,
           "img": "src/assets/web.png", 
           "title": "frontend", 
           "className": "frontend", 
           "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
         },
         {
-          "key": 4,
           "img": "src/assets/web.png", 
           "title": "frontend", 
           "className": "frontend", 
           "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
         },
         {
-          "key": 5,
+          "img": "src/assets/web.png", 
+          "title": "frontend", 
+          "className": "frontend", 
+          "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
+        }
+      ]
+    },
+    {
+      "projects": [
+        {
+          "img": "src/assets/image-personal.png",
+          "title": "backend", 
+          "className": "backend", 
+          "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
+        },
+        {
+          "img": "src/assets/image-personal.png", 
+          "title": "backend", 
+          "className": "backend", 
+          "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
+        },
+        {
+          "img": "src/assets/image-personal.png", 
+          "title": "backend", 
+          "className": "backend", 
+          "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
+        },
+        {
+          "img": "src/assets/web.png", 
+          "title": "frontend", 
+          "className": "frontend", 
+          "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
+        },
+        {
+          "img": "src/assets/web.png", 
+          "title": "frontend", 
+          "className": "frontend", 
+          "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
+        },
+        {
+          "img": "src/assets/web.png", 
+          "title": "frontend", 
+          "className": "frontend", 
+          "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
+        }
+      ]
+    },
+    {
+      "projects": [
+        {
+          "img": "src/assets/image-personal.png",
+          "title": "backend", 
+          "className": "backend", 
+          "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
+        },
+        {
+          "img": "src/assets/image-personal.png", 
+          "title": "backend", 
+          "className": "backend", 
+          "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
+        },
+        {
+          "img": "src/assets/image-personal.png", 
+          "title": "backend", 
+          "className": "backend", 
+          "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
+        },
+        {
+          "img": "src/assets/web.png", 
+          "title": "frontend", 
+          "className": "frontend", 
+          "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
+        },
+        {
+          "img": "src/assets/web.png", 
+          "title": "frontend", 
+          "className": "frontend", 
+          "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, dolore commodi libero tenetur repellat soluta dicta est. Veritatis consequuntur, maxime nulla cupiditate fuga, tenetur eos libero porro, praesentium eligendi quasi."
+        },
+        {
           "img": "src/assets/web.png", 
           "title": "frontend", 
           "className": "frontend", 
