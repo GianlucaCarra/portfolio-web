@@ -106,8 +106,6 @@ export function UserView() {
       </About>
 
       <Projects id='projects'>
-        <h1>Projects</h1>
-
         <Carousel data={slides} />
       </Projects>
 

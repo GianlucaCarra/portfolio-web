@@ -6,6 +6,12 @@ export const Container = styled.div`
   align-items: center;
   gap: 25px;
 
+  > h1 {
+    color: ${({ theme }) => theme.COLOR.WHITE};
+
+    font-size: 28px;
+  }
+
   .slider {
     display: flex;
     align-items: center;
@@ -14,6 +20,14 @@ export const Container = styled.div`
 
     > svg {
       color: ${({ theme }) => theme.COLOR.GRAY_200};
+      transition: .4s;
+
+      &:hover {
+        cursor: pointer;
+        filter: brightness(0.8);
+        transition: .4s;
+        transform: scale(1.5);
+      }
     }
     
     .slide {
@@ -45,5 +59,13 @@ export const Container = styled.div`
     .indicator-inactive {
       background-color: ${({ theme }) => theme.COLOR.GRAY_200};
     }
+  }
+`;
+
+export const Section = styled.div`
+  > h1 {
+    color: ${({ theme }) => theme.COLOR.WHITE};
+
+    font-size: 28px;
   }
 `;

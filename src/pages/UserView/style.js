@@ -131,12 +131,6 @@ export const Projects = styled.section`
 
   gap: 25px;
   padding: 25px 100px;
-
-  > h1 {
-    color: ${({ theme }) => theme.COLOR.WHITE};
-
-    font-size: 28px;
-  }
 `;
 
 export const Contact = styled.section`

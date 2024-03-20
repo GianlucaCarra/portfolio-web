@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Container } from "./style";
+import { Container, Section } from "./style";
 
 import { GaleryItem } from "../GaleryItem";
 
@@ -16,9 +16,11 @@ export function Carousel({ data }) {
   const nextSlide = () => {
     setSlide(slide === data.length - 1 ? 0 : slide + 1);
   }
-
-  return (
+  
+  const html = (
     <Container>
+      <h1>Projects</h1>
+
       <div className="slider">
         <IoIosArrowBack size={40} onClick={prevSlide} />
         {
@@ -34,6 +36,7 @@ export function Carousel({ data }) {
                         className={element.className && " notSelectable"} 
                         title={element.title} 
                         desc={element.desc}
+                        onClick={() => showInfo(element)}
                       />
                     )
                   })
@@ -49,13 +52,27 @@ export function Carousel({ data }) {
         {
           data.map((dot, idx) => {
             return (
-              <div key={idx} className={slide === idx ? "indicator" : "indicator indicator-inactive"}>
-
-              </div>
+              <div key={idx} className={slide === idx ? "indicator" : "indicator indicator-inactive"}></div>
             )
           })
         }
       </span>
     </Container>
   );
+
+  const [project, setProject] = useState(html);
+
+  const showInfo = (data) => {
+    const infoData = "";
+
+    const showInfos = (
+      <Section>
+        <h1>{data.title}</h1>
+      </Section>
+    );
+    
+    setProject(showInfos);
+  }
+
+  return project;
 }
