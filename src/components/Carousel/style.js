@@ -63,9 +63,28 @@ export const Container = styled.div`
 `;
 
 export const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  > svg {
+    color: ${({ theme }) => theme.COLOR.BLUE};
+    position: absolute;
+    left: 100px;
+    transition: .4s;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(0.8);
+      transition: .4s;
+      transform: scale(1.2);
+    }
+  }
+
   > h1 {
     color: ${({ theme }) => theme.COLOR.WHITE};
 
+    text-align: center;
     font-size: 28px;
   }
 `;

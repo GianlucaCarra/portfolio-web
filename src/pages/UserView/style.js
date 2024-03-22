@@ -131,6 +131,8 @@ export const Projects = styled.section`
 
   gap: 25px;
   padding: 25px 100px;
+
+  position: relative;
 `;
 
 export const Contact = styled.section`

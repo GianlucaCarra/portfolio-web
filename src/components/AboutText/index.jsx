@@ -10,6 +10,7 @@ export function AboutText({number, title, text}) {
       </div>
 
       <div className='text'>
+        {title}
         {text}
       </div>
     </Container>

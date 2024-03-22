@@ -3,8 +3,9 @@ import { useState } from "react";
 import { Container, Section } from "./style";
 
 import { GaleryItem } from "../GaleryItem";
+import { InfoSection } from "../InfoSection";
 
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward, IoIosArrowRoundBack} from "react-icons/io";
 
 export function Carousel({ data }) {
   const [slide, setSlide] = useState(0);
@@ -33,7 +34,7 @@ export function Carousel({ data }) {
                       <GaleryItem 
                         key={idx} 
                         img={element.img} 
-                        className={element.className && " notSelectable"} 
+                        className={element.type && " notSelectable"} 
                         title={element.title} 
                         desc={element.desc}
                         onClick={() => showInfo(element)}
@@ -63,11 +64,23 @@ export function Carousel({ data }) {
   const [project, setProject] = useState(html);
 
   const showInfo = (data) => {
-    const infoData = "";
+    const infoData = data.info;
+
+    const showCarousel = () => {
+      setProject(html)
+    }
 
     const showInfos = (
       <Section>
+        <IoIosArrowRoundBack size={50} onClick={showCarousel} />
         <h1>{data.title}</h1>
+        {
+          infoData.text.map((item, idx) => {
+            return (
+              <InfoSection key={idx} className={"reverse"} img={item.img} text={item.parag}/>
+            )
+          })
+        }
       </Section>
     );
     
